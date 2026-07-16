@@ -127,7 +127,7 @@ def main(args, config: BaseConfig):
     # Remove unused modules to free memory
     cleanup_unused_modules(model, args.do_teacher_sampling)
 
-    # Set up inference modules
+    # Set up inference modules (also calls apply_torch_compile internally)
     teacher, student, vae = setup_inference_modules(
         model, config, args.do_teacher_sampling, args.do_student_sampling, model.precision
     )
