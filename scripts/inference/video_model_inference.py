@@ -803,15 +803,6 @@ if __name__ == "__main__":
         default=1,
         help="Number of latent frames to condition on for I2V mode (default: 1).",
     )
-    parser.add_argument(
-        "--conditional_frame_timestep",
-        type=float,
-        default=0.0,
-        help="Timestep value for conditioning frames in I2V mode. "
-        "Use 0.0 (default) to indicate clean conditioning frames. "
-        "Use -1.0 to disable timestep modification. "
-        "Use small positive value (e.g., 0.1) for noisy conditioning.",
-    )
 
     args = parse_args(parser)
     config = setup(args, evaluation=True)
